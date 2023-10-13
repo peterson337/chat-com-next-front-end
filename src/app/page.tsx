@@ -20,11 +20,7 @@ export default function Home() {
         const [socket, setSocket] = useState(null);
 
         
-        useEffect(() => {
-          api.get('/').then((res : T) => {
-            console.log(res.data)
-          })
-        }, [])
+
         return (
     <main className='flex justify-center '>
 

@@ -14,22 +14,29 @@ export const Join = ({setIsChat, setSocket} : Props ) => {
 
 
       if (inputValue.current) {
-        const userName = inputValue?.current?.value;
-        inputValue.current.value = '';         
+        const userName = inputValue.current.value;
+        inputValue.current.value = '';
+  
+        try {
+          const socket = await io('http://localhost:5000');
 
-        const socket = await io.connect('http://localhost:5000')
-      
-//!         Outra forma de conecta o front com back end
+          //!         Outra forma de conecta o front com back end
 
 //?         socket.on('novo usuário', (msg : string) => {
+//Todo       api.get('/').then((res : T) => {
+//Todo      }
+
 //Todo      console.log(msg);
 //?          })
 
-       socket.emit('set_username', userName);
-
-        setSocket(socket);
-        setIsChat(true);
+          socket.emit('set_username', userName);
+          setSocket(socket);
+          setIsChat(true);
+        } catch (error) {
+          console.error('Erro ao conectar ao servidor de socket:', error);
+        }
       }
+  
     }
 
   return (
