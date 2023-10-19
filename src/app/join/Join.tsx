@@ -18,7 +18,7 @@ export const Join = ({setIsChat, setSocket} : Props ) => {
         inputValue.current.value = '';
   
         try {
-          const socket = await io('http://localhost:5000');
+          const socket = await io('https://chat-tempo-real.onrender.com');
 
           //!         Outra forma de conecta o front com back end
 
