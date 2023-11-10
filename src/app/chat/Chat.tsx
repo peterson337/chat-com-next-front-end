@@ -37,7 +37,7 @@ type ArrayMessage = {
   return (
     <section className='text-black flex justify-center items-center md:h-screen p-3'>
 
-      <div className='bg-white p-3 md:w-[600px] md:h-[600px] h-[400px] flex  items-center flex-col rounded-xl w-80'>
+      <div className='bg-white p-3   md:w-[600px] md:h-[600px] h-[400px] w-80 flex  items-center flex-col rounded-xl'>
 
         <h1 className='md:text-2xl text-[25px] border-b mb-3 border-b-[#ccc] pb-2  font-bold'>Chat</h1>
         
@@ -56,15 +56,18 @@ type ArrayMessage = {
                               return (
                                 <section key={authorId}
                                  className={authorId === socket.id ? 
-                                 "text-white bg-blue-500 mr-56 p-2 rounded-xl mb-3 w-[300px] m-3" 
+                                 "text-white bg-blue-500 mr-56 p-2 rounded-xl mb-3 md:w-[300px] m-3 w-24" 
                                      :
-                                 "text-white bg-red-500 ml-56 p-2 rounded-xl mb-3 w-[300px] m-3"
+                                 "text-white bg-red-500 ml-56 p-2 rounded-xl mb-3 md:w-[300px] m-3 w-24"
                                 }
                                 >
                                   <p className='flex flex-col'>
                                     <b className=' break-words md:w-72 text-center'>{item.author}</b>
+                                  
+                                       
                                     <p className=' break-words md:w-72'>{item.text}</p>
                                   </p>
+
                                 </section>
                               );
                             })
