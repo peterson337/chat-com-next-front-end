@@ -35,17 +35,18 @@ type ArrayMessage = {
 
 
   return (
-    <section className='text-black flex justify-center items-center h-screen'>
+    <section className='text-black flex justify-center items-center md:h-screen'>
 
-      <div className='bg-white p-3 m-3 md:w-[600px] md:h-[600px] flex  items-center flex-col rounded-xl'>
+      <div className='bg-white p-3  m-3  md:w-[600px] md:h-[600px] h-[400px] flex  items-center flex-col rounded-xl'>
 
-        <h1 className='md:text-2xl text-[25px] border-b mb-3 border-b-[#ccc] pb-2 font-bold'>Chat</h1>
+        <h1 className='md:text-2xl text-[25px] border-b mb-3 border-b-[#ccc] pb-2  font-bold'>Chat</h1>
         
-      <div className='border-b border-b-[#ccc]  overflow-auto md:pb-[459px] '>
+      <div className='border-b border-b-[#ccc]  overflow-auto md:pb-[459px] pb-60 '>
                           {
                             messageList.length === 0?
                             <p className='m-3 text-red-600 font-bold flex flex-wrap'>
-                              Nenhuma mensagem foi encontrada. Por favor escreva uma mensagem 
+                              Nenhuma mensagem foi encontrada. 
+                              Por favor escreva uma mensagem 
                             </p>
 
                             :
