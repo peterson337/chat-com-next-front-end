@@ -37,7 +37,7 @@ type ArrayMessage = {
   return (
     <section className='text-black flex justify-center items-center md:h-screen'>
 
-      <div className='bg-white p-3  m-3  md:w-[600px] md:h-[600px] h-[400px] flex  items-center flex-col rounded-xl'>
+      <div className='bg-white p-3  m-5  md:w-[600px] md:h-[600px] h-[400px] flex  items-center flex-col rounded-xl'>
 
         <h1 className='md:text-2xl text-[25px] border-b mb-3 border-b-[#ccc] pb-2  font-bold'>Chat</h1>
         
