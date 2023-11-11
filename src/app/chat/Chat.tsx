@@ -13,19 +13,7 @@ type ArrayMessage = {
   export const Chat = ({socket} : Props) => {
     
     const message = useRef<HTMLInputElement | null>(null);
-    const [messageList, setMessageList] = useState<ArrayMessage[]>([
-      {
-        author: "Eu",
-        text: "Minha mensagem",
-        authorId: 1
-      },
-
-      {
-        author: "Eu",
-        text: "Minha mensagem",
-        authorId: 1
-      },
-    ]);
+    const [messageList, setMessageList] = useState<ArrayMessage[]>([]);
     
     useEffect(() => {
       socket.on('receive_message', (data : any) => {
