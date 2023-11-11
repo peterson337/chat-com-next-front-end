@@ -13,7 +13,19 @@ type ArrayMessage = {
   export const Chat = ({socket} : Props) => {
     
     const message = useRef<HTMLInputElement | null>(null);
-    const [messageList, setMessageList] = useState<ArrayMessage[]>([]);
+    const [messageList, setMessageList] = useState<ArrayMessage[]>([
+      {
+        author: "Eu",
+        text: "Minha mensagem",
+        authorId: 1
+      },
+
+      {
+        author: "Eu",
+        text: "Minha mensagem",
+        authorId: 1
+      },
+    ]);
     
     useEffect(() => {
       socket.on('receive_message', (data : any) => {
@@ -41,7 +53,7 @@ type ArrayMessage = {
 
         <h1 className='md:text-2xl text-[25px] border-b mb-3 border-b-[#ccc] pb-2  font-bold'>Chat</h1>
         
-      <div className='border-b border-b-[#ccc]  overflow-auto md:pb-[459px] pb-60 '>
+      <div className='overflow-auto md:pb-[459px] pb-60 '>
                           {
                             messageList.length === 0?
                             <p className='m-3 text-red-600 font-bold flex flex-wrap'>
@@ -56,9 +68,9 @@ type ArrayMessage = {
                               return (
                                 <section key={authorId}
                                  className={authorId === socket.id ? 
-                                 "text-white bg-blue-500 mr-56 p-2 rounded-xl mb-3 md:w-[300px] m-3 w-24" 
+                                 "text-white bg-blue-500 mr-56 p-2 rounded-xl mb-3 md:w-[300px] m-3 w-24 " 
                                      :
-                                 "text-white bg-red-500 ml-56 p-2 rounded-xl mb-3 md:w-[300px] m-3 w-24"
+                                 "text-white bg-red-500 ml-56 p-2 rounded-xl mb-3 md:w-[300px] m-3 w-24 "
                                 }
                                 >
                                   <p className='flex flex-col'>
